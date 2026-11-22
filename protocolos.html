@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Protocolos · Inmersión sin exclusión</title>
+<title>Protocolos</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=TASA+Orbiter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+<link rel="icon" type="image/svg+xml" href="img/favicon-pestana.svg">
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -16,9 +17,12 @@
 
 <header class="site-header" id="top">
   <div class="container nav-bar">
-    <a class="logo" href="inmersion-sin-exclusion.html">Inicio</a>
+    <a class="logo" href="index.html">Inicio</a>
     <nav aria-label="Navegación principal">
-      <ul class="nav-links">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
         <li><a href="principios.html">Principios</a></li>
         <li><a href="protocolos.html" aria-current="page">Protocolos</a></li>
         <li><a href="proyecto.html">Sobre el proyecto</a></li>
@@ -32,7 +36,7 @@
   <section class="page-hero">
     <div class="breadcrumb">
       <div class="container">
-        <a href="inmersion-sin-exclusion.html">Inicio</a> &gt; <span class="current">Protocolos</span>
+        <a href="index.html">Inicio</a> &gt; <span class="current">Protocolos</span>
       </div>
     </div>
     <h1>Protocolos</h1>
@@ -52,9 +56,9 @@
       <div class="principles-list">
 
         <article class="principles-card">
-          <h2 class="principles-title"><a href="#" class="stretched-link">Roles de equipo</a></h2>
+          <h2 class="principles-title"><a href="roles-de-equipo.html" class="stretched-link">Roles de equipo</a></h2>
           <div class="principles-body">
-            <div class="principles-media" aria-hidden="true"></div>
+            <div class="principles-media principles-media--roles" aria-hidden="true"></div>
             <div class="principles-content">
               <p class="principles-desc">
                 Cómo se organiza al equipo que aplica la prueba, definiendo qué función cumple
@@ -62,17 +66,19 @@
               </p>
               <p class="principles-contains-label">Contiene:</p>
               <div class="tag-list">
-                <span class="tag">Moderador</span>
-                <span class="tag">Técnico VR</span>
+                <a class="tag" href="roles-de-equipo.html#tecnico-vr">Técnico VR</a>
+                <a class="tag" href="roles-de-equipo.html#observador">Observador</a>
+                <a class="tag" href="roles-de-equipo.html#moderador">Moderador</a>
+                <a class="tag" href="roles-de-equipo.html#anfitrion">Anfitrión</a>
               </div>
             </div>
           </div>
         </article>
 
         <article class="principles-card">
-          <h2 class="principles-title"><a href="#" class="stretched-link">Estructura</a></h2>
+          <h2 class="principles-title"><a href="estructura.html" class="stretched-link">Estructura</a></h2>
           <div class="principles-body">
-            <div class="principles-media" aria-hidden="true"></div>
+            <div class="principles-media principles-media--estructura" aria-hidden="true"></div>
             <div class="principles-content">
               <p class="principles-desc">
                 Cómo se organiza el desarrollo de las sesiones de evaluación, desde el primer
@@ -80,36 +86,37 @@
               </p>
               <p class="principles-contains-label">Contiene:</p>
               <div class="tag-list">
-                <span class="tag">Sesión de orientación</span>
-                <span class="tag">Sesión de inmersión</span>
+                <a class="tag" href="estructura.html#capacitacion">Capacitación del equipo</a>
+                <a class="tag" href="estructura.html#orientacion">Sesión de orientación</a>
+                <a class="tag" href="estructura.html#inmersion">Sesión de inmersión</a>
               </div>
             </div>
           </div>
         </article>
 
         <article class="principles-card">
-          <h2 class="principles-title"><a href="#" class="stretched-link">Métricas</a></h2>
+          <h2 class="principles-title"><a href="metricas.html" class="stretched-link">Métricas</a></h2>
           <div class="principles-body">
             <div class="principles-media" aria-hidden="true"></div>
             <div class="principles-content">
               <p class="principles-desc">
-                Qué se mide durante la prueba para determinar si la tecnología evaluada es fácil
-                y agradable de usar.
+                Qué se mide y cómo durante la prueba para determinar si la tecnología evaluada es
+                fácil y agradable de usar.
               </p>
               <p class="principles-contains-label">Contiene:</p>
               <div class="tag-list">
-                <span class="tag">Eficacia</span>
-                <span class="tag">Eficiencia</span>
-                <span class="tag">Satisfacción</span>
+                <a class="tag" href="metricas.html#eficacia">Eficacia</a>
+                <a class="tag" href="metricas.html#eficiencia">Eficiencia</a>
+                <a class="tag" href="metricas.html#satisfaccion">Satisfacción</a>
               </div>
             </div>
           </div>
         </article>
 
         <article class="principles-card">
-          <h2 class="principles-title"><a href="#" class="stretched-link">Instrumentos</a></h2>
+          <h2 class="principles-title"><a href="instrumentos.html" class="stretched-link">Instrumentos</a></h2>
           <div class="principles-body">
-            <div class="principles-media" aria-hidden="true"></div>
+            <div class="principles-media principles-media--instrumentos" aria-hidden="true"></div>
             <div class="principles-content">
               <p class="principles-desc">
                 Qué documentos y herramientas se utilizan durante la evaluación para recoger la
@@ -117,12 +124,12 @@
               </p>
               <p class="principles-contains-label">Contiene:</p>
               <div class="tag-list">
-                <span class="tag">Consentimiento informado</span>
-                <span class="tag">C. de perfil de usuario</span>
-                <span class="tag">Guías de apoyo</span>
-                <span class="tag">Matriz de observación</span>
-                <span class="tag">C. de satisfacción</span>
-                <span class="tag">C. de sintomatología</span>
+                <a class="tag" href="instrumentos.html#consentimiento">Consentimiento informado</a>
+                <a class="tag" href="instrumentos.html#perfil-de-usuario">C. de perfil de usuario</a>
+                <a class="tag" href="instrumentos.html#guias-de-apoyo">Guías de apoyo</a>
+                <a class="tag" href="instrumentos.html#matriz">Matriz de observación</a>
+                <a class="tag" href="instrumentos.html#satisfaccion">C. de satisfacción</a>
+                <a class="tag" href="instrumentos.html#sintomatologia">C. de sintomatología</a>
               </div>
             </div>
           </div>
@@ -140,18 +147,40 @@
     </div>
     <div class="footer-col">
       <h4>Navegación</h4>
-      <a href="inmersion-sin-exclusion.html#top">Inicio</a>
-      <a href="inmersion-sin-exclusion.html#proyecto">Sobre el proyecto</a>
+      <a href="index.html#top">Inicio</a>
+      <a href="index.html#proyecto">Sobre el proyecto</a>
       <a href="principios.html">Principios</a>
       <a href="protocolos.html">Protocolos</a>
     </div>
     <div class="footer-col">
       <h4>Contacto</h4>
       <a href="mailto:begona.zamudio.h@mail.pucv.cl">begona.zamudio.h@mail.pucv.cl</a>
-      <p>PUCV · Diseño de Interacción</p>
+      <p>PUCV, Diseño de Interacción</p>
     </div>
   </div>
 </footer>
 
+<script>
+  (function(){
+    var toggle = document.querySelector('.nav-toggle');
+    var links = document.getElementById('nav-links');
+    if(!toggle || !links) return;
+    function setOpen(open){
+      toggle.setAttribute('aria-expanded', open);
+      toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+      links.classList.toggle('is-open', open);
+    }
+    toggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+    document.addEventListener('click', function(e){
+      if(!links.contains(e.target)) setOpen(false);
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){ setOpen(false); toggle.focus(); }
+    });
+  })();
+</script>
 </body>
 </html>

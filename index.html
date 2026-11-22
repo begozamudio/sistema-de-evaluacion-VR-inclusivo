@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Inmersión sin exclusión · Sistema de evaluación inclusivo VR</title>
+<title>Sistema de evaluación inclusivo VR</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=TASA+Orbiter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+<link rel="icon" type="image/svg+xml" href="img/favicon-pestana.svg">
 <link rel="stylesheet" href="style.css">
 
 </head>
@@ -19,7 +20,10 @@
   <div class="container nav-bar">
     <a class="logo" href="#top">Inicio</a>
     <nav aria-label="Navegación principal">
-      <ul class="nav-links">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
         <li><a href="principios.html">Principios</a></li>
         <li><a href="protocolos.html">Protocolos</a></li>
         <li><a href="proyecto.html">Sobre el proyecto</a></li>
@@ -228,7 +232,7 @@
     </div>
     <div class="footer-col">
       <h4>Navegación</h4>
-      <a href="inmersion-sin-exclusion.html">Inicio</a>
+      <a href="index.html">Inicio</a>
       <a href="principios.html">Principios</a>
       <a href="protocolos.html">Protocolos</a>
       <a href="proyecto.html">Sobre el proyecto</a>
@@ -236,10 +240,32 @@
     <div class="footer-col">
       <h4>Contacto</h4>
       <a href="mailto:begona.zamudio.h@mail.pucv.cl">begona.zamudio.h@mail.pucv.cl</a>
-      <p>PUCV · Diseño de Interacción</p>
+      <p>PUCV, Diseño de Interacción</p>
     </div>
   </div>
 </footer>
 
+<script>
+  (function(){
+    var toggle = document.querySelector('.nav-toggle');
+    var links = document.getElementById('nav-links');
+    if(!toggle || !links) return;
+    function setOpen(open){
+      toggle.setAttribute('aria-expanded', open);
+      toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+      links.classList.toggle('is-open', open);
+    }
+    toggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+    document.addEventListener('click', function(e){
+      if(!links.contains(e.target)) setOpen(false);
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){ setOpen(false); toggle.focus(); }
+    });
+  })();
+</script>
 </body>
 </html>

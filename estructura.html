@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estructura</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=TASA+Orbiter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="icon" type="image/svg+xml" href="img/favicon-pestana.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="site-header" id="top">
+  <div class="container nav-bar">
+    <a class="logo" href="index.html">Inicio</a>
+    <nav aria-label="Navegación principal">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="principios.html">Principios</a></li>
+        <li><a href="protocolos.html" aria-current="page">Protocolos</a></li>
+        <li><a href="proyecto.html">Sobre el proyecto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO DE PÁGINA -->
+  <section class="page-hero page-hero--ilustrado page-hero--estructura page-hero--cuadrados">
+    <div class="breadcrumb">
+      <div class="container">
+        <a href="index.html">Inicio</a> &gt;
+        <a href="protocolos.html">Protocolos</a> &gt;
+        <span class="current">Estructura</span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="page-hero-text">
+        <h1>Estructura</h1>
+        <p>Cómo se organiza el desarrollo de las sesiones de evaluación, desde el primer encuentro con el usuario hasta el cierre de cada jornada.</p>
+        <div class="tag-list">
+          <a class="tag" href="#capacitacion">Capacitación del equipo</a>
+          <a class="tag" href="#orientacion">Sesión de orientación</a>
+          <a class="tag" href="#inmersion">Sesión de inmersión</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESUMEN -->
+  <section id="resumen">
+    <div class="container">
+      <div class="article">
+        <p class="article-lead">
+          La estructura define cómo se desarrolla la evaluación, organizada en tres momentos.
+          Primero, una capacitación previa del equipo, necesaria cuando se incorporan ayudantes
+          externos. Luego, una sesión de orientación en la que se prepara al participante y se
+          nivela su manejo de la tecnología. Finalmente, una sesión de inmersión que se puede
+          replicar en jornadas distintas con tareas con dificultad creciente según las
+          necesidades de la evaluación, en que el participante usa el programa que se evalúa y se
+          recogen las métricas.
+        </p>
+
+        <ol class="cog-sequence">
+          <li>Capacitación del equipo</li>
+          <li>Sesión de orientación</li>
+          <li>Sesión de inmersión</li>
+        </ol>
+
+        <p>
+          En cada paso se indica qué rol lo realiza y, como los roles son flexibles,
+          <strong>una misma persona puede cubrir varios de ellos</strong>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- CAPACITACIÓN DEL EQUIPO -->
+  <section id="capacitacion">
+    <div class="container">
+      <div class="article">
+        <h2>Capacitación del equipo</h2>
+        <p>
+          Cuando se incorporan ayudantes externos (monitores) para evaluar las tecnologías, el
+          equipo requiere una capacitación previa a la aplicación de la prueba, que se realiza en
+          una primera sesión. En ella se explica información clave, como la comunicación clara y
+          los procedimientos para instruir. También se recomienda una
+          <strong>simulación de la prueba</strong> para poner en práctica lo aprendido.
+        </p>
+        <p>
+          Su objetivo es que el monitor pueda apoyar las dos tareas críticas de la prueba, la
+          nivelación de tecnología y la inmersión, <strong>sin alterar la validez del
+          procedimiento ni la experiencia del participante</strong>.
+        </p>
+
+        <ul class="principle-list">
+          <li>
+            <p><strong>Forma de enseñar:</strong> en la sesión de orientación, la capacitación
+            enseña a conducir la nivelación de tecnología siguiendo el procedimiento estructurado
+            de comunicación adaptada, modelado y prueba autónoma que se describe más adelante. En
+            las sesiones de inmersión, enseña que el técnico recuerde brevemente el uso de la
+            tecnología al inicio, explique las instrucciones de forma verbal mientras el
+            participante realiza la tarea y ofrezca ayuda adicional solo si el participante la
+            solicita o si comete algún error (los errores deben definirse previamente).</p>
+          </li>
+          <li>
+            <p><strong>Forma de comunicar:</strong> durante todo el procedimiento se comunica con
+            lenguaje llano y comunicación multimodal. Por ejemplo:</p>
+            <div class="compare-example">
+              <div class="compare-do">
+                <span class="compare-label">Hacer</span>
+                <p>“Aprieta este botón de aquí (mostrándolo) para agarrar las cosas”, acompañando las palabras con un gesto.</p>
+              </div>
+              <div class="compare-dont">
+                <span class="compare-label">Evitar</span>
+                <p>“Debes presionar el gatillo del control para interactuar con los objetos virtuales.”</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <a class="inline-link" href="comunicacion.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          Ver Comunicación (Principios)
+        </a>
+
+        <div class="callout-box">
+          <p>¿Quieres saber más sobre la capacitación de los monitores?</p>
+          <a class="btn btn-secondary" href="instrumentos.html#guias-de-apoyo">
+            Ir a guías de apoyo
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- SESIÓN DE ORIENTACIÓN -->
+  <section id="orientacion">
+    <div class="container">
+      <div class="article">
+        <h2>Sesión de orientación</h2>
+        <p>
+          La sesión de orientación es el primer encuentro con el participante. Su propósito es
+          preparar la evaluación, es decir, recibir al participante con un ambiente cálido,
+          formalizar su participación mediante el consentimiento informado, conocerlo a través del
+          perfil de usuario y nivelar el manejo de la tecnología, para que
+          <strong>el acceso al equipo no sea una barrera al momento de evaluar</strong>.
+        </p>
+
+        <ol class="step-list">
+          <li>
+            <div class="step-head">
+              <h3 class="step-title">Recibimiento</h3>
+              <a class="tag step-role" href="roles-de-equipo.html#anfitrion">Anfitrión</a>
+            </div>
+            <p>El anfitrión recibe a los participantes en un ambiente cálido, por ejemplo, con
+            café y galletas, para reducir la ansiedad inicial.</p>
+          </li>
+          <li>
+            <div class="step-head">
+              <h3 class="step-title">Consentimiento informado y perfil de usuario</h3>
+              <a class="tag step-role" href="roles-de-equipo.html#moderador">Moderador</a>
+            </div>
+            <p>El moderador aplica ambos instrumentos a cada participante de forma individual.
+            Primero entrega el <a href="instrumentos.html#consentimiento">consentimiento
+            informado</a> y lo lee en conjunto con el participante, asegurando su comprensión
+            antes de pedir su firma o huella. Luego formula en voz alta las preguntas del
+            <a href="instrumentos.html#perfil-de-usuario">perfil de usuario</a>, apoyándose en
+            láminas fotográficas en algunas de ellas, y registra las respuestas.</p>
+          </li>
+          <li>
+            <div class="step-head">
+              <h3 class="step-title">Nivelación de tecnología</h3>
+              <a class="tag step-role" href="roles-de-equipo.html#tecnico-vr">Técnico VR</a>
+            </div>
+            <p>Se puede realizar de forma simultánea con el paso anterior, dependiendo de los
+            recursos y requerimientos del testeo. El técnico VR enseña al participante a usar la
+            tecnología mediante un procedimiento estructurado:</p>
+            <ol class="cog-sequence">
+              <li>Explicación multimodal</li>
+              <li>Controles sin visor</li>
+              <li>Modelado</li>
+              <li>Prueba con visor</li>
+            </ol>
+            <p>Comienza con una <strong>explicación multimodal</strong>, que combina comunicación
+            verbal en lenguaje llano con apoyo gestual, por ejemplo, mostrando con los controles
+            cómo usar los gatillos. Luego el participante <strong>prueba los controles sin el
+            visor</strong> puesto, para familiarizarse con su sensación táctil y su sonido.
+            Después el técnico <strong>modela las acciones</strong> en realidad virtual, como
+            puede ser moverse por el entorno o tomar objetos, y el participante lo observa a
+            través de <em>screen mirroring</em> para entender el movimiento y la interacción con
+            el programa. Finalmente, el participante <strong>se pone el visor</strong> e
+            interactúa con el software, pero sin evaluación aún.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- SESIÓN DE INMERSIÓN -->
+  <section id="inmersion">
+    <div class="container">
+      <div class="article">
+        <h2>Sesión de inmersión</h2>
+        <p>
+          La sesión de inmersión es aquella en que el participante usa el programa que se evalúa.
+        </p>
+
+        <ol class="step-list">
+          <li>
+            <div class="step-head">
+              <h3 class="step-title">Recibimiento</h3>
+              <a class="tag step-role" href="roles-de-equipo.html#anfitrion">Anfitrión</a>
+            </div>
+            <p>El anfitrión recibe al participante en un ambiente cálido para reducir la ansiedad
+            inicial.</p>
+          </li>
+          <li>
+            <div class="step-head">
+              <h3 class="step-title">Cuestionario de sintomatología previa</h3>
+              <a class="tag step-role" href="roles-de-equipo.html#moderador">Moderador</a>
+            </div>
+            <p>El moderador aplica en voz alta el
+            <a href="instrumentos.html#sintomatologia">cuestionario de síntomas</a> y registra
+            las respuestas.</p>
+          </li>
+          <li>
+            <div class="step-head">
+              <h3 class="step-title">Inmersión</h3>
+              <a class="tag step-role" href="roles-de-equipo.html#tecnico-vr">Técnico VR</a>
+              <a class="tag step-role" href="roles-de-equipo.html#observador">Observador</a>
+            </div>
+            <p>El técnico VR entrega los controles al participante, se asegura de que comprenda
+            su uso y recuerda brevemente cómo funciona la tecnología. Luego ajusta el visor
+            verificando que quede cómodo y explica las instrucciones del programa. Si las
+            instrucciones usan un lenguaje complejo, las traduce a lenguaje llano.</p>
+            <p>El participante realiza la tarea y, durante ella, el técnico VR ofrece ayuda
+            adicional si el participante la solicita o comete alguno de los errores definidos.
+            Mientras tanto, el observador atiende la interacción y registra las métricas en la
+            <a href="instrumentos.html#matriz">matriz de observación</a>.</p>
+          </li>
+          <li>
+            <div class="step-head">
+              <h3 class="step-title">Cuestionario de sintomatología posterior</h3>
+              <a class="tag step-role" href="roles-de-equipo.html#moderador">Moderador</a>
+            </div>
+            <p>El moderador vuelve a aplicar el cuestionario para identificar si la inmersión
+            causó efectos físicos.</p>
+          </li>
+          <li>
+            <div class="step-head">
+              <h3 class="step-title">Cuestionario de satisfacción</h3>
+              <a class="tag step-role" href="roles-de-equipo.html#moderador">Moderador</a>
+            </div>
+            <p>El moderador aplica el
+            <a href="instrumentos.html#satisfaccion">cuestionario de satisfacción</a> sobre el uso
+            del software y del hardware.</p>
+          </li>
+        </ol>
+
+        <div class="callout-box callout-box--note">
+          <p>
+            <strong>Durante toda la sesión rige el protocolo de contención emocional.</strong>
+            Ante señales de malestar, el técnico detiene la tarea y acompaña al participante, y el
+            observador registra lo ocurrido. Sus pasos se detallan en las guías de apoyo.
+          </p>
+          <a class="inline-link" href="instrumentos.html#guias-de-apoyo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            Ver Guías de apoyo (Instrumentos)
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- POR QUÉ SE ORGANIZA ASÍ -->
+  <section id="por-que">
+    <div class="container">
+      <div class="article">
+        <h2>Por qué se organiza así</h2>
+        <p>
+          La capacitación previa existe porque <strong>la validez del sistema depende de que el
+          apoyo sea comparable</strong> entre sesiones y entre integrantes del equipo. Si cada
+          monitor instruyera o ayudara a su manera, las diferencias en los resultados podrían
+          deberse al equipo y no al programa evaluado, y la simulación permite ensayar el
+          procedimiento antes de aplicarlo con participantes.
+        </p>
+        <p>
+          Se separa la orientación de las sesiones de inmersión porque la principal dificultad
+          observada durante el testeo piloto de la metodología fue el uso de los controles. Si el
+          participante aprendiera a manejarlos durante la tarea, los resultados reflejarían ese
+          aprendizaje y no la usabilidad del programa, por lo que nivelar la tecnología antes
+          busca que <strong>lo que se mida sea el software</strong>.
+        </p>
+        <p>
+          El orden de los pasos de la nivelación responde a la <strong>exposición
+          gradual</strong>. Se parte de lo menos exigente, una explicación y el contacto con los
+          controles sin visor, se continúa con la observación de las acciones modeladas por el
+          técnico y se termina con una primera prueba guiada con el visor. Esta introducción
+          progresiva busca disminuir la carga cognitiva y el temor ante una tecnología
+          desconocida. Incorpora el modelado, que la evidencia respalda para enseñar tareas de
+          varios pasos a personas con discapacidad intelectual (Park et al., 2019), y una primera
+          exposición que prepara las siguientes, ya que la exposición repetida a la realidad
+          virtual reduce el malestar (Doty et al., 2025). La explicación multimodal aplica el
+          principio de comunicación, al no depender de un solo canal para transmitir cómo se usa
+          el equipo.
+        </p>
+        <p>
+          El consentimiento se lee junto con cada participante, de manera individual, porque
+          <strong>un consentimiento inclusivo no se reduce a un documento accesible</strong>,
+          sino que requiere explicación, diálogo y verificación de la comprensión (Strickler y
+          Havercamp, 2023). El perfil de usuario permite conocer la experiencia tecnológica del
+          participante y posibles barreras adicionales, información que sustenta la adaptación de
+          la prueba a cada persona. La recepción cálida a cargo del anfitrión aplica la
+          contención emocional desde el primer contacto.
+        </p>
+        <p>
+          En las sesiones de inmersión, la sintomatología se mide antes y después porque la
+          diferencia entre ambas mediciones ayuda a <strong>distinguir el malestar causado por la
+          exposición</strong> de una condición que el participante ya tenía antes.
+        </p>
+        <p>
+          Por último, la división de funciones durante la inmersión, con el técnico a cargo del
+          equipo y del apoyo y el observador a cargo del registro, permite
+          <strong>observar sin interrumpir la experiencia del participante</strong>. Los detalles
+          de cada función se describen en Roles.
+        </p>
+
+        <a class="inline-link" href="roles-de-equipo.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          Ver Roles de equipo (Protocolos)
+        </a>
+
+        <div class="references">
+          <h4>Referencias</h4>
+          <ul>
+            <li>Doty, T. A., Kelly, J. W., Gilbert, S. B. y Dorneich, M. C. (2025). Cybersickness abatement from repeated exposure to VR with reduced discomfort. <em>IEEE Transactions on Visualization and Computer Graphics, 31</em>(9), 5910–5921. <a href="https://doi.org/10.1109/TVCG.2024.3483070" target="_blank" rel="noopener">https://doi.org/10.1109/TVCG.2024.3483070</a></li>
+            <li>Park, J., Bouck, E. y Duenas, A. (2019). The effect of video modeling and video prompting interventions on individuals with intellectual disability: A systematic literature review. <em>Journal of Special Education Technology, 34</em>(1), 3–16. <a href="https://doi.org/10.1177/0162643418780464" target="_blank" rel="noopener">https://doi.org/10.1177/0162643418780464</a></li>
+            <li>Strickler, J. G. y Havercamp, S. M. (2023). Evaluating an informed consent process designed to improve inclusion of adults with intellectual disability in research. <em>Research in Developmental Disabilities, 134</em>, Artículo 104413. <a href="https://doi.org/10.1016/j.ridd.2022.104413" target="_blank" rel="noopener">https://doi.org/10.1016/j.ridd.2022.104413</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contacto">
+  <div class="container footer-grid">
+    <div>
+      <span class="footer-logo">Logo PUCV</span>
+    </div>
+    <div class="footer-col">
+      <h4>Navegación</h4>
+      <a href="index.html#top">Inicio</a>
+      <a href="proyecto.html">Sobre el proyecto</a>
+      <a href="principios.html">Principios</a>
+      <a href="protocolos.html">Protocolos</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <a href="mailto:begona.zamudio.h@mail.pucv.cl">begona.zamudio.h@mail.pucv.cl</a>
+      <p>PUCV, Diseño de Interacción</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.querySelector('.nav-toggle');
+    var links = document.getElementById('nav-links');
+    if(!toggle || !links) return;
+    function setOpen(open){
+      toggle.setAttribute('aria-expanded', open);
+      toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+      links.classList.toggle('is-open', open);
+    }
+    toggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+    document.addEventListener('click', function(e){
+      if(!links.contains(e.target)) setOpen(false);
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){ setOpen(false); toggle.focus(); }
+    });
+  })();
+</script>
+</body>
+</html>

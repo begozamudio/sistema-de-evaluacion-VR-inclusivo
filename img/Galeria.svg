@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="41.5 41.5 200.5 200.5">
   <defs>
     <style>
       .cls-1 {
-        fill: none;
+        fill: #4f277a;
         stroke: #4e2779;
         stroke-miterlimit: 10;
-        stroke-width: 2px;
+        stroke-width: 10px;
+      }
+
+      .cls-2 {
+        fill: #d9c7e3;
       }
     </style>
   </defs>
-  <rect class="cls-1" x="7.3" y="12.05" width="33.4" height="23.91" rx="2.22" ry="2.22"/>
-  <circle class="cls-1" cx="32.3" cy="19.12" r="2.73"/>
-  <path class="cls-1" d="M7.3,32l9.61-10c.43-.45,1.15-.46,1.59-.01l8.12,8.23c.41.41,1.07.44,1.51.07l3.36-2.84c.45-.38,1.11-.35,1.52.08l7.39,7.66"/>
+  <rect class="cls-1" x="70.51" y="90.74" width="142.44" height="101.98" rx="9.49" ry="9.49"/>
+  <circle class="cls-2" cx="177.12" cy="120.94" r="11.64"/>
+  <path class="cls-2" d="M204.14,173.39l-15.36-16.26c-3.97-4.2-10.44-4.53-14.8-.76l-5.22,4.52c-4.32,3.74-10.74,3.45-14.72-.67l-25.44-26.32c-4.28-4.43-11.29-4.38-15.52.1l-34.02,36.12c-1.11,1.18-1.73,2.75-1.73,4.38h0c0,6.09,4.84,11.02,10.8,11.01,24.09-.05,82.28,0,110.95.02,6.19,0,9.35-7.59,5.05-12.14Z"/>
 </svg>

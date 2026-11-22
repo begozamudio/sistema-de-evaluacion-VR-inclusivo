@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Métricas</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=TASA+Orbiter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="icon" type="image/svg+xml" href="img/favicon-pestana.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="site-header" id="top">
+  <div class="container nav-bar">
+    <a class="logo" href="index.html">Inicio</a>
+    <nav aria-label="Navegación principal">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="principios.html">Principios</a></li>
+        <li><a href="protocolos.html" aria-current="page">Protocolos</a></li>
+        <li><a href="proyecto.html">Sobre el proyecto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO DE PÁGINA -->
+  <section class="page-hero page-hero--ilustrado page-hero--metricas page-hero--cuadrados">
+    <div class="breadcrumb">
+      <div class="container">
+        <a href="index.html">Inicio</a> &gt;
+        <a href="protocolos.html">Protocolos</a> &gt;
+        <span class="current">Métricas</span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="page-hero-text">
+        <h1>Métricas</h1>
+        <p>Qué se mide y cómo durante la prueba para determinar si la tecnología evaluada es fácil y agradable de usar.</p>
+        <div class="tag-list">
+          <a class="tag" href="#eficacia">Eficacia</a>
+          <a class="tag" href="#eficiencia">Eficiencia</a>
+          <a class="tag" href="#satisfaccion">Satisfacción</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USABILIDAD Y MÉTRICAS -->
+  <section id="resumen">
+    <div class="container">
+      <div class="article">
+        <p class="article-lead">
+          La prueba evalúa la usabilidad de la tecnología a partir de tres métricas: eficacia,
+          eficiencia y satisfacción. La norma ISO 9241-11:2018 entiende la usabilidad como el
+          grado en que usuarios específicos logran sus objetivos con un sistema, producto o
+          servicio con eficacia, eficiencia y satisfacción, en un contexto de uso determinado
+          (International Organization for Standardization [ISO], 2018). Esta sección reúne qué se
+          registra en cada métrica, con qué instrumento y quién lo hace.
+        </p>
+        <p>
+          <strong>Ninguna métrica se interpreta sola</strong>, porque los datos se recogen por
+          observación y también a partir de la percepción del usuario. Una tarea no lograda, un
+          tiempo largo o una respuesta negativa pueden provenir del programa, pero también de una
+          consigna que no se entendió, de una tarea mal ajustada al perfil de la persona o de un
+          malestar físico.
+        </p>
+        <p>
+          La siguiente tabla resume qué se registra en cada métrica, con qué instrumento y quién
+          lo registra.
+        </p>
+
+        <div class="glossary-table-wrap">
+          <table class="glossary-table metrics-table">
+            <thead>
+              <tr>
+                <th scope="col">Métrica</th>
+                <th scope="col">Indicador</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Instrumento</th>
+                <th scope="col">Quién registra</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="rowgroup" rowspan="2">Eficacia</th>
+                <td>Éxito de tarea</td>
+                <td>Cuantitativo</td>
+                <td>Matriz de observación</td>
+                <td>Observador</td>
+              </tr>
+              <tr>
+                <td>Registro de errores</td>
+                <td>Cualitativo y cuantitativo</td>
+                <td>Matriz de observación</td>
+                <td>Observador</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <th scope="rowgroup">Eficiencia</th>
+                <td>Tiempo en tarea</td>
+                <td>Cuantitativo</td>
+                <td>Matriz de observación</td>
+                <td>Observador</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <th scope="rowgroup" rowspan="3">Satisfacción</th>
+                <td>Percepción del usuario</td>
+                <td>Cualitativo y cuantitativo</td>
+                <td>Cuestionario de satisfacción</td>
+                <td>Moderador</td>
+              </tr>
+              <tr>
+                <td>Conductas observadas</td>
+                <td>Cualitativo</td>
+                <td>Matriz de observación</td>
+                <td>Observador</td>
+              </tr>
+              <tr>
+                <td>Bienestar físico</td>
+                <td>Cuantitativo y cualitativo</td>
+                <td>Cuestionario de sintomatología</td>
+                <td>Moderador</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- EFICACIA -->
+  <section id="eficacia">
+    <div class="container">
+      <div class="article">
+        <h2>Eficacia</h2>
+        <p>
+          La eficacia mide en qué medida los participantes logran completar la tarea con el
+          programa. La norma ISO 9241-11:2018 la define como la exactitud y la integridad con que
+          los usuarios alcanzan los objetivos especificados (ISO, 2018). En el sistema se evalúa a
+          partir de <strong>lo que el participante efectivamente logra hacer</strong> con el
+          programa y no de lo que opina sobre él.
+        </p>
+
+        <h3>Cómo se mide</h3>
+        <ul class="principle-list">
+          <li>
+            <p><strong>Éxito de tarea:</strong> mientras el participante realiza la tarea, el
+            observador registra en tiempo real, mediante observación directa, si fue lograda,
+            lograda con asistencia o no lograda. Cada tarea tiene un criterio de éxito observable.
+            La categoría intermedia distingue las tareas que el participante completó por sí mismo
+            de aquellas en que necesitó apoyo, y la matriz de observación registra en qué necesitó
+            asistencia. El apoyo se ofrece solo si el participante lo solicita o si comete alguno
+            de los errores definidos para la tarea.</p>
+          </li>
+          <li>
+            <p><strong>Registro de errores:</strong> los errores se registran mediante observación
+            en la matriz de observación. Se nombran los errores más comunes y se anota cuántos
+            participantes cometieron el mismo error. Los errores que se registran se definen antes
+            de la prueba y para cada uno la matriz anota cuánto le costó al participante superarlo,
+            usando una escala de Likert adaptada (nada, un poco, bastante o mucho). Esta
+            organización permite pasar de incidentes individuales a problemas del programa, ya que
+            un error que repiten varias personas apunta a una dificultad del diseño, mientras que
+            uno aislado puede responder a diferencias individuales.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- EFICIENCIA -->
+  <section id="eficiencia">
+    <div class="container">
+      <div class="article">
+        <h2>Eficiencia</h2>
+        <p>
+          La eficiencia mide el esfuerzo y los recursos que el participante emplea para completar
+          la tarea. La norma ISO 9241-11:2018 la define como los recursos utilizados en relación
+          con los resultados logrados (ISO, 2018). En el sistema, <strong>el recurso considerado
+          es el tiempo</strong>, uno de los que contempla la norma.
+        </p>
+
+        <h3>Cómo se mide</h3>
+        <ul class="principle-list">
+          <li>
+            <p><strong>Tiempo en tarea:</strong> el observador mide el tiempo con cronómetro, de
+            forma cuantitativa, desde que termina la instrucción hasta que el participante cumple
+            el objetivo, y lo registra en la matriz de observación. Comenzar a contar una vez
+            finalizada la instrucción separa el tiempo que toma comprender la instrucción del
+            tiempo que toma usar el programa, de modo que las diferencias de comprensión no se
+            atribuyan al software. Como el tiempo queda registrado en la misma matriz que el éxito
+            de tarea y la asistencia recibida, se interpreta junto con ellos.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- SATISFACCIÓN -->
+  <section id="satisfaccion">
+    <div class="container">
+      <div class="article">
+        <h2>Satisfacción</h2>
+        <p>
+          La satisfacción mide la percepción del participante sobre el programa. La norma
+          ISO 9241-11:2018 la define como el grado en que las respuestas físicas, cognitivas y
+          emocionales del usuario satisfacen sus necesidades y expectativas (ISO, 2018). Como esta
+          definición incluye respuestas físicas y emocionales además de la opinión declarada, el
+          sistema la recoge por <strong>tres vías complementarias</strong>: un cuestionario
+          posterior a la tarea, la observación de conductas durante la inmersión y el registro del
+          bienestar físico.
+        </p>
+
+        <h3>Cómo se mide</h3>
+        <ul class="principle-list">
+          <li>
+            <p><strong>Satisfacción post-tarea:</strong> se mide de forma cuantitativa y
+            cualitativa después de que el participante completa la tarea, mediante un cuestionario
+            adaptado de la System Usability Scale (SUS; Brooke, 1996) sobre la facilidad de uso del
+            software y del hardware. El moderador formula las preguntas en voz alta, el
+            participante responde y el moderador registra las respuestas. Las preguntas se
+            simplificaron y se redistribuyeron respecto de la escala original. Varias preguntas
+            ofrecen alternativas opuestas (fácil o difícil, tranquilo o tenso, cómodo o incómodo)
+            en lugar de un sí o un no, para no inducir la respuesta, y todas van seguidas de la
+            pregunta “¿por qué?”. Se conserva lo que mide cada pregunta, pero se cambia la forma de
+            plantearla.</p>
+            <a class="inline-link" href="protocolos.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              Ver Cuestionario de satisfacción (Instrumentos)
+            </a>
+          </li>
+          <li>
+            <p><strong>Conductas observadas:</strong> durante la inmersión, el observador registra
+            las reacciones corporales, faciales y verbales del participante en notas cualitativas
+            que capturan citas textuales y movimientos.</p>
+          </li>
+          <li>
+            <p><strong>Bienestar físico:</strong> se pregunta y se observa la presencia de
+            malestares físicos, como mareo, sudoración o fatiga. El moderador los registra con el
+            cuestionario de sintomatología, que se aplica antes y después de la inmersión, y la
+            comparación entre ambas mediciones permite identificar el efecto físico de la
+            inmersión.</p>
+            <a class="inline-link" href="protocolos.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              Ver Cuestionario de sintomatología (Instrumentos)
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- POR QUÉ SE MIDE ASÍ -->
+  <section id="por-que">
+    <div class="container">
+      <div class="article">
+        <h2>Por qué se mide así</h2>
+        <p>
+          Las tres métricas se leen en conjunto porque <strong>ninguna describe por sí sola la
+          usabilidad del programa</strong>. Una tarea no lograda puede deberse al programa, pero
+          también a que la instrucción no se comprendió o a un malestar físico, por lo que la
+          eficacia se interpreta junto con los principios del sistema. La instrucción se entrega
+          en lenguaje llano y por más de un canal, de modo que un fallo no refleje falta de
+          comprensión. La prueba se ajusta al perfil del participante y el control de síntomas
+          permite descartar que una dificultad provenga de la inmersión y no del software.
+          Registrar el apoyo como una categoría propia, en lugar de contarlo como éxito o como
+          fallo, evita sobreestimar o subestimar la usabilidad del programa.
+        </p>
+        <p>
+          El tiempo se mide desde que termina la instrucción para que la eficiencia refleje el uso
+          del programa y no el esfuerzo de comprender lo que se pide. Con una lógica similar el
+          sistema incluye una sesión de orientación, ya que la principal dificultad observada
+          durante el desarrollo de la metodología fue el uso de los controles. Si el participante
+          aprendiera a usarlos durante la tarea, el tiempo medido reflejaría ese aprendizaje y no
+          la eficiencia del programa, lo que responde a la lógica de la exposición gradual.
+        </p>
+        <p>
+          En la satisfacción, el autorreporte de personas con discapacidad intelectual es
+          vulnerable a la <strong>aquiescencia</strong>, la tendencia a responder «sí»
+          independientemente del contenido de la pregunta (Sigelman et al., 1981). Finlay y Lyons
+          (2002) concluyen que, además del deseo de complacer, puede ser una respuesta a preguntas
+          demasiado complejas, y Heal y Sigelman (1995) muestran que reemplazar las preguntas de
+          sí/no por preguntas con alternativas reduce el sesgo. Por ello la satisfacción no
+          depende solo de lo que el participante declara. Las alternativas de respuesta, la
+          pregunta “¿por qué?” que permite contrastar cada respuesta con su explicación, la
+          observación de conductas y el registro de síntomas se complementan, en línea con la
+          práctica de evaluación del dolor en discapacidad intelectual, donde se recomienda
+          combinar el autorreporte con la observación porque muchas personas no pueden informar
+          de forma fiable lo que sienten (Doody y Bailey, 2017).
+        </p>
+        <p>
+          La adaptación del cuestionario responde al mismo problema desde el diseño de las
+          preguntas. La SUS se desarrolló para evaluar software tradicional y alterna enunciados
+          positivos y negativos, lo que puede suponer una demanda cognitiva alta para esta
+          población. Para el autorreporte con personas con discapacidad intelectual, una revisión
+          de 51 estudios recomienda descriptores de una o dos palabras, preguntas aclaratorias y
+          opciones de respuesta pictóricas (Hartley y MacLean, 2006), y las adaptaciones
+          inclusivas de escalas pueden ser confiables, aunque pueden reducir la precisión de la
+          medición (Vlot-van Anrooij et al., 2018). El cuestionario sigue esa línea con
+          alternativas breves y con la pregunta “¿por qué?” después de cada respuesta, y la
+          pérdida de precisión se compensa con los demás indicadores. El lenguaje llano busca que
+          la respuesta refleje la experiencia con el programa y no la comprensión de la pregunta.
+          Por último, las preguntas sobre tranquilidad y diversión recogen las respuestas
+          emocionales y el registro de síntomas las respuestas físicas, ambas incluidas en la
+          definición de satisfacción de la norma junto con las respuestas cognitivas (ISO, 2018).
+        </p>
+        <p>
+          Como el éxito de tarea, el apoyo recibido y el tiempo quedan registrados en la misma
+          matriz, y la satisfacción se contrasta con las conductas observadas y los síntomas,
+          <strong>los resultados se interpretan en conjunto</strong> y no como cifras aisladas.
+        </p>
+
+        <a class="inline-link" href="protocolos.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          Ver Matriz de observación (Instrumentos)
+        </a>
+
+        <div class="references">
+          <h4>Referencias</h4>
+          <ul>
+            <li>Brooke, J. (1996). SUS: A "quick and dirty" usability scale. En P. W. Jordan, B. Thomas, B. A. Weerdmeester y I. L. McClelland (Eds.), <em>Usability evaluation in industry</em> (pp. 189–194). Taylor &amp; Francis.</li>
+            <li>Doody, O. y Bailey, M. E. (2017). Pain and pain assessment in people with intellectual disability: Issues and challenges in practice. <em>British Journal of Learning Disabilities, 45</em>(3), 157–165. <a href="https://doi.org/10.1111/bld.12189" target="_blank" rel="noopener">https://doi.org/10.1111/bld.12189</a></li>
+            <li>Finlay, W. M. L. y Lyons, E. (2002). Acquiescence in interviews with people who have mental retardation. <em>Mental Retardation, 40</em>(1), 14–29. <a href="https://doi.org/10.1352/0047-6765(2002)040%3C0014:AIIWPW%3E2.0.CO;2" target="_blank" rel="noopener">https://doi.org/10.1352/0047-6765(2002)040%3C0014:AIIWPW%3E2.0.CO;2</a></li>
+            <li>Hartley, S. L. y MacLean, W. E., Jr. (2006). A review of the reliability and validity of Likert-type scales for people with intellectual disability. <em>Journal of Intellectual Disability Research, 50</em>(11), 813–827. <a href="https://doi.org/10.1111/j.1365-2788.2006.00844.x" target="_blank" rel="noopener">https://doi.org/10.1111/j.1365-2788.2006.00844.x</a></li>
+            <li>Heal, L. W. y Sigelman, C. K. (1995). Response biases in interviews of individuals with limited mental ability. <em>Journal of Intellectual Disability Research, 39</em>(4), 331–340. <a href="https://doi.org/10.1111/j.1365-2788.1995.tb00525.x" target="_blank" rel="noopener">https://doi.org/10.1111/j.1365-2788.1995.tb00525.x</a></li>
+            <li>International Organization for Standardization. (2018). <em>Ergonomics of human-system interaction — Part 11: Usability: Definitions and concepts</em> (ISO 9241-11:2018). <a href="https://www.iso.org/standard/63500.html" target="_blank" rel="noopener">https://www.iso.org/standard/63500.html</a></li>
+            <li>Sigelman, C. K., Budd, E. C., Spanhel, C. L. y Schoenrock, C. J. (1981). When in doubt, say yes: Acquiescence in interviews with mentally retarded persons. <em>Mental Retardation, 19</em>(2), 53–58.</li>
+            <li>Vlot-van Anrooij, K., Tobi, H., Hilgenkamp, T. I. M., Leusink, G. L. y Naaldenberg, J. (2018). Self-reported measures in health research for people with intellectual disabilities: An inclusive pilot study on suitability and reliability. <em>BMC Medical Research Methodology, 18</em>(1), Artículo 80. <a href="https://doi.org/10.1186/s12874-018-0539-1" target="_blank" rel="noopener">https://doi.org/10.1186/s12874-018-0539-1</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contacto">
+  <div class="container footer-grid">
+    <div>
+      <span class="footer-logo">Logo PUCV</span>
+    </div>
+    <div class="footer-col">
+      <h4>Navegación</h4>
+      <a href="index.html#top">Inicio</a>
+      <a href="proyecto.html">Sobre el proyecto</a>
+      <a href="principios.html">Principios</a>
+      <a href="protocolos.html">Protocolos</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <a href="mailto:begona.zamudio.h@mail.pucv.cl">begona.zamudio.h@mail.pucv.cl</a>
+      <p>PUCV, Diseño de Interacción</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.querySelector('.nav-toggle');
+    var links = document.getElementById('nav-links');
+    if(!toggle || !links) return;
+    function setOpen(open){
+      toggle.setAttribute('aria-expanded', open);
+      toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+      links.classList.toggle('is-open', open);
+    }
+    toggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+    document.addEventListener('click', function(e){
+      if(!links.contains(e.target)) setOpen(false);
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){ setOpen(false); toggle.focus(); }
+    });
+  })();
+</script>
+</body>
+</html>

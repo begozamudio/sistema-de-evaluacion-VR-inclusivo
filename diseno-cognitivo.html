@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Diseño cognitivo · Inmersión sin exclusión</title>
+<title>Diseño cognitivo</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=TASA+Orbiter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+<link rel="icon" type="image/svg+xml" href="img/favicon-pestana.svg">
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -16,12 +17,15 @@
 
 <header class="site-header" id="top">
   <div class="container nav-bar">
-    <a class="logo" href="inmersion-sin-exclusion.html">Inicio</a>
+    <a class="logo" href="index.html">Inicio</a>
     <nav aria-label="Navegación principal">
-      <ul class="nav-links">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
         <li><a href="principios.html" aria-current="page">Principios</a></li>
         <li><a href="protocolos.html">Protocolos</a></li>
-        <li><a href="sobre-el-proyecto.html">Sobre el proyecto</a></li>
+        <li><a href="proyecto.html">Sobre el proyecto</a></li>
       </ul>
     </nav>
   </div>
@@ -29,19 +33,23 @@
 
 <main>
   <!-- HERO DE PÁGINA -->
-  <section class="page-hero">
+  <section class="page-hero page-hero--ilustrado page-hero--cognitivo page-hero--cuadrados">
     <div class="breadcrumb">
       <div class="container">
-        <a href="inmersion-sin-exclusion.html">Inicio</a> &gt;
+        <a href="index.html">Inicio</a> &gt;
         <a href="principios.html">Principios</a> &gt;
         <span class="current">Diseño cognitivo</span>
       </div>
     </div>
-    <h1>Diseño cognitivo</h1>
-    <p>Cómo se diseña y ajusta el testeo, para que se evalúe el software, no la experiencia de evaluación.</p>
-    <div class="tag-list">
-      <a class="tag" href="#adaptacion-al-perfil">Adaptación al perfil</a>
-      <a class="tag" href="#exposicion-gradual">Exposición gradual</a>
+    <div class="container">
+      <div class="page-hero-text">
+        <h1>Diseño cognitivo</h1>
+        <p>Cómo se diseña y ajusta el testeo, para que se evalúe el software, no la experiencia de evaluación.</p>
+        <div class="tag-list">
+          <a class="tag" href="#adaptacion-al-perfil">Adaptación al perfil</a>
+          <a class="tag" href="#exposicion-gradual">Exposición gradual</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -64,31 +72,65 @@
           evitar que la tecnología se convierta en una barrera para acceder al software y así
           obtener resultados sin sesgos.
         </p>
+
         <p>
           Para saber cómo adaptar una tarea a un perfil, antes conviene definir cómo se clasifica
           la discapacidad intelectual. Tanto el DSM-5 como el modelo de la Asociación Americana de
           Discapacidades Intelectuales y del Desarrollo (AAIDD) dejaron de clasificar la
           discapacidad intelectual por el puntaje de cociente intelectual y pasaron a clasificarla
           por el <strong>nivel de apoyo que la persona necesita</strong> para funcionar, evaluado
-          los dominios conceptuales, sociales y prácticos (Schalock et al., 2021). La AAIDD
-          incluso desarrolló un instrumento específico para esto, la Supports Intensity Scale
-          (SIS), que evalúa necesidades de apoyo en 49 actividades de vida distintas (Schalock et
-          al., 2021).
+          en los dominios conceptuales, sociales y prácticos (Schalock et al., 2021):
+        </p>
+
+        <div class="cog-domains">
+          <div class="cog-domain">
+            <p class="cog-domain-title">Conceptual</p>
+            <p class="cog-domain-desc">Lenguaje, lectura, escritura, números, dinero y tiempo.</p>
+          </div>
+          <div class="cog-domain">
+            <p class="cog-domain-title">Social</p>
+            <p class="cog-domain-desc">Relaciones con otros, responsabilidad social y seguimiento de normas.</p>
+          </div>
+          <div class="cog-domain">
+            <p class="cog-domain-title">Práctico</p>
+            <p class="cog-domain-desc">Cuidado personal, rutinas diarias, transporte y uso de dinero.</p>
+          </div>
+        </div>
+
+        <p>
+          La AAIDD incluso desarrolló un instrumento específico para esto, la Supports Intensity
+          Scale (SIS), que evalúa necesidades de apoyo en 49 actividades de vida distintas
+          (Schalock et al., 2021).
         </p>
 
         <h3>Por qué se mide el perfil</h3>
         <p>
           La Clasificación Internacional del Funcionamiento, de la Discapacidad y de la Salud
-          (CIF), de la Organización Mundial de la Salud, hace la siguiente distinción: define la
-          <strong>capacidad</strong> como lo que la persona puede hacer en condiciones óptimas y
-          el <strong>desempeño</strong> como lo que efectivamente hace en su entorno real
-          (Organización Mundial de la Salud, 2001). Aplicando esta distinción a una evaluación de
-          usabilidad, un cuestionario de perfil aplicado antes de la prueba mide más bien
-          capacidad estimada y la observación de la persona durante la tarea mide el desempeño
-          real. Ambos datos son necesarios porque no siempre coinciden, y la
-          <strong>combinación de ambos determina si la variante de tarea elegida es la
-          adecuada.</strong>
+          (CIF), de la Organización Mundial de la Salud, distingue entre
+          <strong>capacidad</strong> y <strong>desempeño</strong> (Organización Mundial de la
+          Salud, 2001). En una evaluación de usabilidad, ambos datos se obtienen en momentos
+          distintos y no siempre coinciden:
         </p>
+
+        <div class="cog-merge">
+          <div class="cog-merge-sources">
+            <div class="cog-merge-card">
+              <p class="cog-merge-title">Capacidad</p>
+              <p class="cog-merge-desc">Lo que la persona puede hacer en condiciones óptimas.</p>
+              <p class="cog-merge-meta"><span>Se mide con</span> cuestionario de perfil, antes de la prueba</p>
+            </div>
+            <div class="cog-merge-card">
+              <p class="cog-merge-title">Desempeño</p>
+              <p class="cog-merge-desc">Lo que la persona efectivamente hace en su entorno real.</p>
+              <p class="cog-merge-meta"><span>Se mide con</span> observación durante la tarea</p>
+            </div>
+          </div>
+          <div class="cog-merge-connector" aria-hidden="true"></div>
+          <div class="cog-merge-result">
+            <p>La combinación de ambos determina si la <strong>variante de tarea elegida es la adecuada</strong>.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -117,10 +159,33 @@
         <h3>Modelado</h3>
         <p>
           Bandura (1977) formalizó el aprendizaje observacional en su Teoría del Aprendizaje
-          Social, donde se afirma que se puede adquirir una conducta nueva solo observando a un
-          modelo ejecutarla, mediante cuatro procesos (atención, retención, reproducción motora y
-          motivación).
+          Social: se puede adquirir una conducta nueva solo observando a un modelo ejecutarla.
+          Esto ocurre mediante cuatro procesos:
         </p>
+
+        <ol class="cog-steps">
+          <li>
+            <span class="cog-step-number" aria-hidden="true">1</span>
+            <p class="cog-step-title">Atención</p>
+            <p class="cog-step-desc">Observar al modelo.</p>
+          </li>
+          <li>
+            <span class="cog-step-number" aria-hidden="true">2</span>
+            <p class="cog-step-title">Retención</p>
+            <p class="cog-step-desc">Recordar lo observado.</p>
+          </li>
+          <li>
+            <span class="cog-step-number" aria-hidden="true">3</span>
+            <p class="cog-step-title">Reproducción motora</p>
+            <p class="cog-step-desc">Ejecutar la conducta.</p>
+          </li>
+          <li>
+            <span class="cog-step-number" aria-hidden="true">4</span>
+            <p class="cog-step-title">Motivación</p>
+            <p class="cog-step-desc">Querer repetirla.</p>
+          </li>
+        </ol>
+
         <p>
           Sobre esa base, se desarrolló el <em>video modeling</em>. El metaanálisis de Bellini y
           Akullian (2007) encontró que el modelado en video es efectivo para enseñar habilidades
@@ -132,10 +197,18 @@
           jerarquía de apoyos (<em>prompting hierarchy</em>) de la educación especial: ayuda
           entregada en niveles crecientes de intrusividad (verbal, gesto, modelado, y, solo si
           hace falta, guía física) que se retira a medida que la persona gana autonomía (Ault &amp;
-          Griffen, 2013). Una secuencia de nivelación tecnológica compuesta por explicación
-          verbal, modelado y prueba autónoma constituye, en la práctica, una jerarquía de apoyos
-          bien aplicada.
+          Griffen, 2013).
         </p>
+        <p>
+          Una secuencia de nivelación tecnológica compuesta por explicación verbal, modelado y
+          prueba autónoma constituye, en la práctica, una jerarquía de apoyos bien aplicada:
+        </p>
+
+        <ol class="cog-sequence">
+          <li>Explicación verbal</li>
+          <li>Modelado</li>
+          <li>Prueba autónoma</li>
+        </ol>
 
         <div class="references">
           <h4>Referencias</h4>
@@ -162,18 +235,40 @@
     </div>
     <div class="footer-col">
       <h4>Navegación</h4>
-      <a href="inmersion-sin-exclusion.html#top">Inicio</a>
-      <a href="sobre-el-proyecto.html">Sobre el proyecto</a>
+      <a href="index.html#top">Inicio</a>
+      <a href="proyecto.html">Sobre el proyecto</a>
       <a href="principios.html">Principios</a>
       <a href="protocolos.html">Protocolos</a>
     </div>
     <div class="footer-col">
       <h4>Contacto</h4>
       <a href="mailto:begona.zamudio.h@mail.pucv.cl">begona.zamudio.h@mail.pucv.cl</a>
-      <p>PUCV · Diseño de Interacción</p>
+      <p>PUCV, Diseño de Interacción</p>
     </div>
   </div>
 </footer>
 
+<script>
+  (function(){
+    var toggle = document.querySelector('.nav-toggle');
+    var links = document.getElementById('nav-links');
+    if(!toggle || !links) return;
+    function setOpen(open){
+      toggle.setAttribute('aria-expanded', open);
+      toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+      links.classList.toggle('is-open', open);
+    }
+    toggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+    document.addEventListener('click', function(e){
+      if(!links.contains(e.target)) setOpen(false);
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){ setOpen(false); toggle.focus(); }
+    });
+  })();
+</script>
 </body>
 </html>

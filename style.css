@@ -11,6 +11,7 @@
     --nav-text:rgba(255,255,255,0.88);
     --nav-text-hover:#FFFFFF;
     --shadow: 0 1px 2px rgba(33,26,41,0.06), 0 8px 24px rgba(80,37,123,0.06);
+    --accent:#b86e0a;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
@@ -26,6 +27,7 @@
       --nav-text:rgba(32,18,46,0.72);
       --nav-text-hover:#20122e;
       --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+      --accent:#f0b35a;
     }
   }
   :root[data-theme="dark"]{
@@ -41,6 +43,7 @@
     --nav-text:rgba(32,18,46,0.72);
     --nav-text-hover:#20122e;
     --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+    --accent:#f0b35a;
   }
 
   *{ box-sizing:border-box; }
@@ -85,7 +88,8 @@
     align-items:center;
     justify-content:space-between;
     gap:1rem;
-    padding:1.1rem 0;
+    padding-top:1.1rem;
+    padding-bottom:1.1rem;
   }
   .logo{
     font-family:'TASA Orbiter',sans-serif;
@@ -477,6 +481,62 @@
   color:var(--text-muted);
   margin-bottom:0.6rem;
 }
+/* Miniatura de Comunicación.
+   Escritorio y tablet (recuadro cuadrado): archivo propio, Comunicacion_miniatura.svg.
+   Móvil (recuadro 2:1, ver media query de 560px): la misma ilustración del hero. */
+.principles-media--comunicacion{
+  background-color:#fbcb82;
+  background-image:url("img/Comunicacion_miniatura.svg");
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:cover;
+}
+/* Miniatura de Roles de equipo: mismo esquema, con el morado de su ilustración.
+   Escritorio y tablet: roles-de-equipo-miniatura.svg. Móvil: la ilustración del hero. */
+.principles-media--roles{
+  background-color:#a080b9;
+  background-image:url("img/roles-de-equipo-miniatura.svg");
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:cover;
+}
+/* Miniaturas de Estructura e Instrumentos: morado de su ilustración, con la
+   ilustración del hero recortada al centro (mientras no exista una miniatura propia) */
+.principles-media--estructura,
+.principles-media--instrumentos{
+  background-color:#a080b9;
+  background-repeat:no-repeat;
+  background-position:center bottom;
+  background-size:auto 100%;
+}
+.principles-media--estructura{ background-image:url("img/Estructura-ilustracion.svg"); }
+.principles-media--instrumentos{ background-image:url("img/Instrumentos-ilustracion.svg"); }
+@media (max-width:760px){
+  .principles-list{ gap:1.5rem; }
+  .principles-card{ padding:1.5rem; }
+  .principles-body{ gap:1.5rem; }
+  .principles-media{ width:120px; height:120px; }
+}
+@media (max-width:560px){
+  .principles-list{ gap:1.25rem; }
+  .principles-card{ padding:1.25rem; }
+  .principles-title{ margin-bottom:1rem; }
+  /* La imagen pasa arriba del texto y ocupa todo el ancho de la tarjeta */
+  .principles-body{ flex-direction:column; gap:1rem; }
+  .principles-media{ width:100%; height:auto; aspect-ratio:2 / 1; }
+  .principles-media--comunicacion{
+    background-image:url("img/Comunicacion_ilustración.svg");
+    background-position:center bottom;
+    background-size:100% auto;
+  }
+  .principles-media--roles{
+    background-image:url("img/roles-de-equipo-ilustracion.svg");
+    background-position:center bottom;
+    background-size:100% auto;
+  }
+  .principles-media--estructura,
+  .principles-media--instrumentos{ background-size:100% auto; }
+}
 .tag-list{
   display:flex;
   flex-wrap:wrap;
@@ -587,13 +647,15 @@
 
 /* ---------- Personas que participan ---------- */
 .person-grid{
-  display:flex;
-  flex-wrap:wrap;
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
   gap:2.5rem 2rem;
 }
 .person-card{
-  width:150px;
   text-align:center;
+}
+@media (max-width:760px){
+  .person-grid{ grid-template-columns:repeat(2, 1fr); gap:2rem 1.25rem; }
 }
 .person-photo{
   width:120px;
@@ -801,30 +863,36 @@ section p{
 }
 .compare-do,
 .compare-dont{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:1.1rem 1.25rem;
+  display:flex;
+  flex-direction:column;
 }
-.compare-do{ border-left:3px solid var(--primary); }
-.compare-dont{ border-left:3px solid var(--text-muted); }
 .compare-label{
   display:block;
-  font-size:0.76rem;
+  font-family:'TASA Orbiter',sans-serif;
+  font-size:1rem;
   font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:0.06em;
-  margin-bottom:0.6rem;
+  padding:0 0.9rem 0.6rem;
+  border-bottom:3px solid;
+  margin-bottom:1.1rem;
 }
-.compare-do .compare-label{ color:var(--primary); }
-.compare-dont .compare-label{ color:var(--text-muted); }
+.compare-do .compare-label{
+  color:var(--primary);
+  border-color:var(--primary);
+}
+.compare-dont .compare-label{
+  color:var(--text-muted);
+  border-color:var(--border);
+}
 .compare-do p,
 .compare-dont p{
-  font-size:0.92rem;
+  font-size:0.95rem;
   line-height:1.6;
   color:var(--text);
-  margin-bottom:0;
+  margin:0 0 0.9rem;
+  padding:0 0.9rem;
 }
+.compare-do p:last-child,
+.compare-dont p:last-child{ margin-bottom:0; }
 .channel-caption{
   font-size:0.85rem;
   color:var(--text-muted);
@@ -875,6 +943,17 @@ section p{
 }
 .glossary-table td{ color:var(--text-muted); line-height:1.55; }
 .glossary-table td:first-child{ color:var(--text); font-weight:600; white-space:nowrap; }
+/* Tabla de métricas: un <tbody> por métrica, con la métrica como encabezado de fila */
+.metrics-table tbody th{
+  background:none;
+  font-family:inherit;
+  font-weight:700;
+  color:var(--primary-strong);
+  white-space:nowrap;
+  border-right:1px solid var(--border);
+}
+.metrics-table tbody:not(:last-child) tr:last-child td{ border-bottom:1px solid var(--border); }
+.metrics-table tbody:last-child th{ border-bottom:none; }
  
 /* ---------- Lista de referencias ---------- */
 .reference-list{
@@ -900,15 +979,575 @@ section p{
 /* ---------- Chips que funcionan como enlaces ---------- */
 a.tag{ text-decoration:none; transition:background .15s ease, color .15s ease; }
 a.tag:hover{ background:var(--primary); color:var(--on-primary); border-color:var(--primary); }
+.principles-card a.tag{ position:relative; z-index:1; }
 .page-hero .tag-list{ justify-content:center; }
+
+/* ---------- Hero con ilustración de fondo ---------- */
+/* La ilustración (SVG sin fondo) va a la derecha sobre un degradado crema → amarillo
+   que cubre todo el hero, así ilustración y fondo se ven como una sola pieza. */
+.page-hero--ilustrado{
+  /* Colores claros fijos: el fondo de la ilustración es claro también en modo oscuro */
+  --text:#211a29;
+  --text-muted:#6b6072;
+  --primary:#50257B;
+  --primary-strong:#3d1c60;
+  --border:#e2d3bd;
+  --bg:#FFF9F3;
+  text-align:left;
+  padding:1.25rem 0 3.5rem;
+  min-height:380px;
+  /* Degradado del fondo (la ilustración es transparente) */
+  --hero-degradado:linear-gradient(90deg, #f8f1e6 15%, #fbcb82 60%);
+  background-color:#fbcb82;
+  background-repeat:no-repeat;
+  /* La ilustración se alinea con el borde derecho del contenido, no con el de la pantalla */
+  /* Anclada abajo: los cuerpos de los personajes deben tocar el borde inferior del hero */
+  background-position:right max(1.5rem, calc((100% - 1120px) / 2 + 1.5rem)) bottom, 0 0;
+  /* En anchos intermedios se achica para no quedar detrás del texto */
+  background-size:min(760px, 58%) auto, 100% 100%;
+}
+.page-hero--comunicacion{
+  background-image:url("img/Comunicacion_ilustración.svg"), var(--hero-degradado);
+}
+.page-hero--cognitivo{
+  background-image:url("img/diseno-cognitivo-ilustracion.svg"), var(--hero-degradado);
+}
+.page-hero--bienestar{
+  background-image:url("img/Bienestar-ilustracion.svg"), var(--hero-degradado);
+}
+/* Bienestar: el cuerpo está cortado arriba, así que la ilustración debe tocar el borde
+   superior e inferior del hero (alto 100%) y llegar hasta el borde derecho de la pantalla.
+   Si no cabe entera, se corre a la derecha del texto y lo que sobra se recorta por la derecha. */
+@media (min-width:1100px){
+  .page-hero--bienestar{
+    /* Borde derecho del texto + 1rem de aire */
+    --bienestar-x:calc(max(1.5rem, (100vw - 1120px) / 2 + 1.5rem) + min(440px, 38vw) + 1rem);
+    /* 100% en background-position = alineada a la derecha; max() evita que se meta bajo el texto */
+    background-position:max(var(--bienestar-x), 100%) bottom, 0 0;
+    background-size:auto 100%, 100% 100%;
+  }
+  /* Los cuadrados que se desvanecen terminan donde empieza la ilustración (ancho = 2 × alto ≈ 808px) */
+  .page-hero--bienestar.page-hero--cuadrados::before{
+    left:calc(max(1.5rem, (100% - 1120px) / 2 + 1.5rem) + min(440px, 38vw));
+    right:calc(100% - max(var(--bienestar-x), 100% - 808px) - 20px);
+  }
+}
+/* Tablet: al lado del texto el cuerpo quedaría recortado, así que la ilustración
+   pasa debajo del texto, igual que en móvil */
+@media (min-width:761px) and (max-width:1099px){
+  .page-hero--bienestar{
+    min-height:0;
+    padding-bottom:calc(50vw + 1.5rem);
+    background-position:right bottom, 0 0;
+    background-size:100% auto, 100% 100%;
+  }
+  .page-hero--bienestar .page-hero-text{ max-width:none; }
+  .page-hero--bienestar.page-hero--cuadrados::before{ content:none; }
+}
+/* Escritorio: cuadrados lila que salen de la ilustración hacia el texto y se desvanecen,
+   para que la transición entre ilustración y texto sea gradual (Comunicación, Diseño cognitivo, Bienestar) */
+@media (min-width:761px){
+  .page-hero--cuadrados{ position:relative; isolation:isolate; }
+  .page-hero--cuadrados::before{
+    content:"";
+    position:absolute;
+    z-index:-1;
+    top:0; bottom:0;
+    /* Termina donde empieza la ilustración. Repite el cálculo de su background-position,
+       donde el 100% equivale al ancho del hero menos el ancho de la ilustración */
+    right:calc(max(1.5rem, (100% - min(760px, 58%) - 1120px) / 2 + 1.5rem) + min(760px, 58%) - 20px);
+    /* ...y empieza a mitad de camino entre el borde del texto y la ilustración:
+       punto medio entre (margen izquierdo + ancho del texto) y (100% - borde de la ilustración) */
+    left:calc((max(1.5rem, (100% - 1120px) / 2 + 1.5rem) + min(440px, 38vw)
+               + 100% - max(1.5rem, (100% - min(760px, 58%) - 1120px) / 2 + 1.5rem) - min(760px, 58%)) / 2);
+    background:url("img/hero-cuadrados.svg") right bottom / auto 100% no-repeat;
+    -webkit-mask-image:linear-gradient(90deg, transparent, #000 90%);
+            mask-image:linear-gradient(90deg, transparent, #000 90%);
+    pointer-events:none;
+  }
+}
+/* Roles de equipo, Métricas, Estructura e Instrumentos: mismo degradado que Comunicación,
+   pero hacia el morado de su ilustración */
+.page-hero--roles,
+.page-hero--metricas,
+.page-hero--estructura,
+.page-hero--instrumentos{
+  --hero-degradado:linear-gradient(90deg, #f8f1e6 15%, #a080b9 60%);
+  background-color:#a080b9;
+}
+.page-hero--roles{
+  background-image:url("img/roles-de-equipo-ilustracion.svg"), var(--hero-degradado);
+}
+.page-hero--metricas{
+  background-image:url("img/Metricas-ilustracion.svg"), var(--hero-degradado);
+}
+/* Estructura e Instrumentos: sus ilustraciones no traen los cuadrados amarillos de Métricas,
+   así que se agregan como una capa intermedia, con la misma posición y tamaño que la ilustración */
+.page-hero--estructura,
+.page-hero--instrumentos{
+  background-position:right max(1.5rem, calc((100% - 1120px) / 2 + 1.5rem)) bottom,
+                      right max(1.5rem, calc((100% - 1120px) / 2 + 1.5rem)) bottom, 0 0;
+  background-size:min(760px, 58%) auto, min(760px, 58%) auto, 100% 100%;
+}
+.page-hero--estructura{
+  background-image:url("img/Estructura-ilustracion.svg"), url("img/hero-cuadrados-estructura.svg"), var(--hero-degradado);
+}
+.page-hero--instrumentos{
+  background-image:url("img/Instrumentos-ilustracion.svg"), url("img/hero-cuadrados-instrumentos.svg"), var(--hero-degradado);
+}
+/* Sobre el lila, la dispersión de cuadrados va en amarillo */
+.page-hero--roles.page-hero--cuadrados::before,
+.page-hero--metricas.page-hero--cuadrados::before,
+.page-hero--estructura.page-hero--cuadrados::before,
+.page-hero--instrumentos.page-hero--cuadrados::before{ background-image:url("img/hero-cuadrados-amarillo.svg"); }
+.page-hero--ilustrado .breadcrumb{ padding:0 0 2.5rem; }
+/* El hero no tiene padding lateral, así que el breadcrumb lo toma de su container */
+.page-hero--ilustrado .breadcrumb .container{ padding:0 1.5rem; }
+.page-hero--ilustrado .page-hero-text{ max-width:min(440px, 38vw); }
+.page-hero--ilustrado p{ margin:0 0 2rem; }
+.page-hero--ilustrado .tag-list{ justify-content:flex-start; }
+@media (max-width:760px){
+  /* En pantallas angostas la ilustración pasa debajo del texto */
+  .page-hero--ilustrado{
+    min-height:0;
+    padding-bottom:calc(50vw + 1.5rem);
+    background-position:right bottom, 0 0;
+    background-size:100% auto, 100% 100%;
+  }
+  .page-hero--ilustrado .page-hero-text{ max-width:none; }
+  .page-hero--estructura,
+  .page-hero--instrumentos{
+    background-position:right bottom, right bottom, 0 0;
+    background-size:100% auto, 100% auto, 100% 100%;
+  }
+  /* La ilustración de Instrumentos es más alta (760×450), así que necesita más espacio abajo */
+  .page-hero--instrumentos{ padding-bottom:calc(59.2vw + 1.5rem); }
+  /* El morado es oscuro: en vertical queda solo detrás de la ilustración, no del texto */
+  .page-hero--roles,
+  .page-hero--metricas,
+  .page-hero--estructura,
+  .page-hero--instrumentos{ --hero-degradado:linear-gradient(180deg, #f8f1e6 45%, #a080b9 75%); }
+}
 
 /* ---------- Artículo de contenido ---------- */
 .article{ max-width:760px; margin:0 auto; }
 .article h2{ font-size:1.8rem; color:var(--text); margin-bottom:1.25rem; scroll-margin-top:5rem; }
 .article h3{ font-size:1.25rem; color:var(--primary-strong); margin:2rem 0 0.75rem; }
+.article .principle-title{ font-size:1.05rem; margin:0 0 0.55rem; }
 .article p{ color:var(--text-muted); font-size:1rem; line-height:1.75; margin-bottom:1.1rem; }
 .article p strong{ color:var(--text); font-weight:600; }
 .article .article-lead{ font-size:1.1rem; color:var(--text); margin-bottom:2.5rem; }
+
+/* ---------- Diseño cognitivo: componentes visuales ---------- */
+/* Dominios */
+.cog-domains{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1rem;
+  margin:1.25rem 0 1.5rem;
+}
+.cog-domain{
+  border-top:3px solid var(--primary);
+  padding-top:0.85rem;
+}
+.article .cog-domain-title{
+  font-family:'TASA Orbiter',sans-serif;
+  font-weight:700;
+  color:var(--text);
+  margin-bottom:0.3rem;
+}
+.article .cog-domain-desc{ font-size:0.9rem; line-height:1.6; margin-bottom:0; }
+
+/* Capacidad + desempeño → resultado */
+.cog-merge{ margin:1.5rem 0 1rem; }
+.cog-merge-sources{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1.25rem;
+}
+.cog-merge-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:1.2rem 1.35rem;
+}
+.article .cog-merge-title{
+  font-family:'TASA Orbiter',sans-serif;
+  font-size:1.1rem;
+  font-weight:700;
+  color:var(--primary-strong);
+  margin-bottom:0.35rem;
+}
+.article .cog-merge-desc{ font-size:0.92rem; line-height:1.6; margin-bottom:0.85rem; }
+.article .cog-merge-meta{
+  font-size:0.88rem;
+  line-height:1.5;
+  color:var(--text);
+  margin:0;
+  padding-top:0.75rem;
+  border-top:1px solid var(--border);
+}
+.cog-merge-meta span{
+  display:block;
+  font-size:0.72rem;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+  color:var(--text-muted);
+  margin-bottom:0.15rem;
+}
+.cog-merge-connector{
+  position:relative;
+  width:50%;
+  height:24px;
+  margin:0 auto;
+  border:2px solid var(--primary);
+  border-top:none;
+  border-radius:0 0 12px 12px;
+}
+.cog-merge-connector::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:100%;
+  width:2px;
+  height:20px;
+  margin-left:-1px;
+  background:var(--primary);
+}
+.cog-merge-result{
+  margin-top:20px;
+  background:var(--primary);
+  border-radius:12px;
+  padding:1rem 1.35rem;
+  text-align:center;
+}
+.article .cog-merge-result p,
+.article .cog-merge-result strong{ color:var(--on-primary); margin:0; }
+
+/* Pasos de Bandura */
+.cog-steps{
+  list-style:none;
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:1rem;
+  margin:1.5rem 0 2rem;
+  padding:0;
+}
+.cog-steps li{
+  position:relative;
+  text-align:center;
+}
+.cog-steps li + li::before{
+  content:"";
+  position:absolute;
+  top:21px;
+  right:calc(50% + 28px);
+  width:calc(100% - 56px + 1rem);
+  height:2px;
+  background:var(--secondary);
+}
+.cog-step-number{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:var(--primary);
+  color:var(--on-primary);
+  font-family:'TASA Orbiter',sans-serif;
+  font-weight:700;
+  font-size:1.1rem;
+  margin-bottom:0.75rem;
+}
+.article .cog-step-title{
+  font-family:'TASA Orbiter',sans-serif;
+  font-weight:700;
+  color:var(--text);
+  line-height:1.3;
+  margin-bottom:0.25rem;
+}
+.article .cog-step-desc{ font-size:0.88rem; line-height:1.5; margin:0; }
+
+/* Secuencia del protocolo */
+.cog-sequence{
+  list-style:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:0.5rem 0;
+  margin:2rem 0 2.5rem;
+  padding:0;
+}
+.cog-sequence li{
+  font-family:'TASA Orbiter',sans-serif;
+  font-weight:700;
+  font-size:1.05rem;
+  color:var(--text);
+}
+.cog-sequence li + li{ margin-left:2.5rem; position:relative; }
+.cog-sequence li + li::after{
+  content:"\2192";
+  position:absolute;
+  left:-2.5rem;
+  width:2.5rem;
+  text-align:center;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:1.2rem;
+  line-height:1;
+  color:var(--primary);
+  font-weight:700;
+}
+.cog-sequence li:last-child{ color:var(--primary-strong); }
+
+@media (max-width:640px){
+  .cog-domains,
+  .cog-merge-sources{ grid-template-columns:1fr; }
+  .cog-merge-connector{ width:2px; height:24px; border:none; border-radius:0; background:var(--primary); }
+  .cog-merge-connector::after{ display:none; }
+  .cog-merge-result{ margin-top:0; }
+  .cog-steps{ grid-template-columns:1fr 1fr; row-gap:1.5rem; }
+  .cog-steps li + li::before{ display:none; }
+  .cog-sequence{ flex-direction:column; align-items:center; gap:0; }
+  .cog-sequence li + li{ margin:1.6rem 0 0; }
+  .cog-sequence li + li::after{
+    content:"\2193";
+    left:50%;
+    top:-1.35rem;
+    transform:translateX(-50%);
+  }
+}
+
+/* ---------- Bienestar: componentes visuales ---------- */
+/* Diagrama vergencia–acomodación */
+.vac-figure{ margin:1.5rem 0 2rem; }
+.vac-panels{ display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.vac-panel{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:1rem 1rem 0.75rem;
+}
+.article .vac-panel-title{
+  font-family:'TASA Orbiter',sans-serif;
+  font-weight:700;
+  color:var(--primary-strong);
+  margin:0 0 0.5rem;
+}
+.vac-panel svg{ display:block; width:100%; height:auto; overflow:visible; }
+.vac-label{ font-family:'Inter',sans-serif; font-size:14px; font-weight:500; fill:var(--text-muted); }
+.vac-ray{ stroke:var(--primary); stroke-width:1.5; }
+.vac-ray--virtual{ stroke-dasharray:5 4; }
+.vac-object{ fill:var(--primary); }
+.vac-object--virtual{ fill:var(--surface); stroke:var(--primary); stroke-width:2; stroke-dasharray:4 3; }
+.vac-eye{ fill:var(--surface); stroke:var(--text); stroke-width:1.5; }
+.vac-pupil{ fill:var(--text); }
+.vac-screen{ fill:var(--text-muted); }
+.vac-conv,
+.vac-focus{ fill:none; stroke-width:3; stroke-linecap:round; }
+.vac-conv{ stroke:var(--primary); }
+.vac-focus{ stroke:var(--accent); }
+.vac-figure figcaption{
+  font-size:0.85rem;
+  line-height:1.6;
+  color:var(--text-muted);
+  margin-top:0.75rem;
+}
+
+/* Cifras de duración */
+.wb-stats{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1rem;
+  margin:1.25rem 0 1.75rem;
+}
+.wb-stat{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:1.1rem 1.2rem;
+}
+.article .wb-stat-value{
+  font-family:'TASA Orbiter',sans-serif;
+  font-weight:700;
+  font-size:1.8rem;
+  line-height:1.1;
+  color:var(--primary-strong);
+  margin-bottom:0.5rem;
+  font-variant-numeric:tabular-nums;
+}
+.wb-stat-value span{ font-size:1rem; color:var(--text-muted); font-weight:600; }
+.article .wb-stat-desc{ font-size:0.88rem; line-height:1.55; margin:0; }
+
+/* Escala original vs adaptada */
+.wb-scale{ display:grid; gap:0.85rem; margin:1.25rem 0 1.75rem; }
+.wb-scale-row{
+  display:grid;
+  grid-template-columns:9rem 1fr;
+  align-items:center;
+  gap:1rem;
+}
+.article .wb-scale-label{
+  font-size:0.76rem;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+  margin:0;
+}
+.wb-scale-levels{
+  list-style:none;
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:0.5rem;
+  margin:0;
+  padding:0;
+}
+.wb-scale-levels li{
+  text-align:center;
+  padding:0.55rem 0.4rem;
+  border:1px solid var(--border);
+  border-radius:8px;
+  background:var(--surface);
+  font-size:0.92rem;
+  color:var(--text-muted);
+}
+.wb-scale-row--adapted .wb-scale-levels li{
+  background:var(--secondary);
+  border-color:var(--secondary);
+  color:var(--text);
+  font-weight:600;
+}
+
+@media (max-width:640px){
+  .wb-stats,
+  .vac-panels{ grid-template-columns:1fr; }
+  .wb-scale-row{ grid-template-columns:1fr; gap:0.4rem; }
+  .wb-scale-levels{ grid-template-columns:repeat(2, 1fr); }
+}
+
+/* ---------- Roles de equipo: componentes visuales ---------- */
+/* Secuencia de asistencia dentro de la lista de funciones */
+.principle-list .cog-sequence{ margin:1rem 0 0 1.4rem; justify-content:flex-start; }
+.principle-list .cog-sequence li{ font-size:0.95rem; }
+
+@media (max-width:640px){
+  .principle-list .cog-sequence{ align-items:flex-start; }
+  .principle-list .cog-sequence li + li::after{ left:0.6rem; transform:none; }
+}
+
+/* ---------- Estructura: pasos de las sesiones ---------- */
+.step-list{
+  list-style:none;
+  counter-reset:paso;
+  padding:0;
+  margin:1.75rem 0 2.5rem;
+}
+.step-list > li{
+  counter-increment:paso;
+  position:relative;
+  padding-left:3.25rem;
+  margin-bottom:2rem;
+}
+.step-list > li:last-child{ margin-bottom:0; }
+/* Número del paso, igual que en los pasos de Bandura (Diseño cognitivo) */
+.step-list > li::before{
+  content:counter(paso);
+  position:absolute;
+  left:0;
+  top:-0.1rem;
+  width:2.25rem;
+  height:2.25rem;
+  border-radius:50%;
+  background:var(--primary);
+  color:var(--on-primary);
+  font-family:'TASA Orbiter',sans-serif;
+  font-weight:700;
+  font-size:1rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+/* Línea que une un paso con el siguiente */
+.step-list > li:not(:last-child)::after{
+  content:"";
+  position:absolute;
+  left:calc(1.125rem - 1px);
+  top:2.4rem;
+  bottom:-1.85rem;
+  width:2px;
+  background:var(--secondary);
+}
+.step-head{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:0.5rem 0.75rem;
+  margin-bottom:0.5rem;
+}
+.article .step-title{
+  font-family:'TASA Orbiter',sans-serif;
+  font-size:1.1rem;
+  color:var(--text);
+  margin:0;
+  display:block;
+}
+.step-role{ font-size:0.78rem; padding:0.25rem 0.75rem; }
+.article .step-list p{ color:var(--text); font-size:0.98rem; line-height:1.7; margin-bottom:0.75rem; }
+.article .step-list p:last-child{ margin-bottom:0; }
+.step-list .cog-sequence{ margin:1rem 0 1.25rem; justify-content:flex-start; }
+.step-list .cog-sequence li{ font-size:0.95rem; }
+.article .cog-sequence{ margin:1.5rem 0 2rem; }
+.article a:not(.btn):not(.tag):not(.inline-link){ color:var(--primary); }
+
+/* Recuadro de llamada (botón a guías, protocolo de contención) */
+.callout-box{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem 1.5rem;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:1.25rem 1.5rem;
+  margin:0.5rem 0 1rem;
+}
+.article .callout-box p{ color:var(--text); margin:0; flex:1 1 260px; }
+.callout-box--note{ border-left:4px solid var(--primary); display:block; }
+.article .callout-box--note p{ margin-bottom:0.75rem; }
+.callout-box--note .inline-link{ margin:0; }
+
+@media (max-width:640px){
+  .step-list .cog-sequence{ align-items:flex-start; }
+  .step-list .cog-sequence li + li::after{ left:0.6rem; transform:none; }
+  .callout-box .btn{ width:100%; justify-content:center; }
+}
+
+/* ---------- Instrumentos: descargas ---------- */
+.download-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.75rem;
+  margin:0.5rem 0 0.75rem;
+}
+.resource-list--forms{ margin:1.5rem 0 2rem; }
+.resource-list--forms .resource-row{ padding:1.25rem 0; }
+.resource-list--forms .icon-square,
+.resource-list--forms .icon-square img{ width:48px; height:48px; }
+.article .resource-list--forms p{ margin:0; }
+.article .resource-list--forms .resource-title{ color:var(--text); margin-bottom:0.25rem; }
+.article .resource-list--forms .resource-desc{ font-size:0.9rem; line-height:1.6; }
+.glossary-table td a{ color:var(--text); text-decoration:none; }
+.glossary-table td a:hover{ color:var(--primary); text-decoration:underline; }
+.instrument-scale{ max-width:420px; margin:0.75rem 0 0 1.4rem; }
+
+@media (max-width:560px){
+  .download-actions .btn{ width:100%; justify-content:center; white-space:normal; }
+  .resource-list--forms .resource-content{ flex-basis:calc(100% - 48px - 1.5rem); }
+}
 
 /* ---------- Referencias ---------- */
 .references{ margin-top:2rem; padding-top:1.25rem; border-top:1px solid var(--border); }
@@ -927,12 +1566,47 @@ a.tag:hover{ background:var(--primary); color:var(--on-primary); border-color:va
   @media (max-width:760px){
     .principles-grid{ grid-template-columns:1fr; gap:2.25rem; }
     .footer-grid{ grid-template-columns:1fr; gap:2rem; }
-    .nav-bar{ flex-wrap:wrap; row-gap:0.6rem; }
-    .nav-links{ gap:1.1rem; width:100%; justify-content:flex-start; flex-wrap:wrap; }
+    .nav-bar{ position:relative; }
+    .nav-toggle{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:2.5rem;
+      height:2.5rem;
+      padding:0;
+      margin:-0.5rem -0.5rem -0.5rem 0;
+      background:none;
+      border:0;
+      border-radius:8px;
+      color:var(--on-primary);
+      cursor:pointer;
+    }
+    .nav-toggle svg{ width:1.5rem; height:1.5rem; }
+    .nav-toggle:focus-visible{ outline:2px solid var(--on-primary); outline-offset:2px; }
+    .nav-links{
+      display:none;
+      position:absolute;
+      top:100%;
+      right:1.5rem;
+      width:max-content;
+      max-width:calc(100vw - 3rem);
+      flex-direction:column;
+      gap:0;
+      padding:0.9rem 0.75rem;
+      background:var(--primary);
+      border-radius:0 0 10px 10px;
+      box-shadow:var(--shadow);
+    }
+    .nav-links.is-open{ display:flex; }
+    .nav-links a{ display:block; padding:0.85rem 1.75rem; }
   }
   @media (max-width:560px){
-    .nav-links{ gap:0.9rem 1.1rem; }
-    .nav-links a{ font-size:0.85rem; }
+    .hero-actions{ flex-direction:column; align-items:stretch; }
+    .hero-actions .btn{
+      justify-content:center;
+      text-align:center;
+      white-space:normal;
+    }
     .resource-row{
       flex-wrap:wrap;
       align-items:flex-start;
@@ -955,7 +1629,6 @@ a.tag:hover{ background:var(--primary); color:var(--on-primary); border-color:va
 }
 @media (max-width:480px){
   .gallery-item{ flex-basis:80vw; }
-  .person-card{ width:110px; }
   .person-photo{ width:90px; height:90px; }
 }
 @media (max-width:760px){

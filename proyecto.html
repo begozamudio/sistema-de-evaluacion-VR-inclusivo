@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sobre el proyecto · Inmersión sin exclusión</title>
+<title>Sobre el proyecto</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=TASA+Orbiter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+<link rel="icon" type="image/svg+xml" href="img/favicon-pestana.svg">
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -16,12 +17,15 @@
 
 <header class="site-header" id="top">
   <div class="container nav-bar">
-    <a class="logo" href="inmersion-sin-exclusion.html">Inicio</a>
+    <a class="logo" href="index.html">Inicio</a>
     <nav aria-label="Navegación principal">
-      <ul class="nav-links">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
         <li><a href="principios.html">Principios</a></li>
         <li><a href="protocolos.html">Protocolos</a></li>
-        <li><a href="sobre-el-proyecto.html" aria-current="page">Sobre el proyecto</a></li>
+        <li><a href="proyecto.html" aria-current="page">Sobre el proyecto</a></li>
       </ul>
     </nav>
   </div>
@@ -29,7 +33,7 @@
 
 <div class="breadcrumb">
   <div class="container">
-    <a href="inmersion-sin-exclusion.html">Inicio</a> &gt; <span class="current">Sobre el proyecto</span>
+    <a href="index.html">Inicio</a> &gt; <span class="current">Sobre el proyecto</span>
   </div>
 </div>
 
@@ -88,6 +92,7 @@
           <p class="person-role">Profesora co-guía, diseñadora.</p>
         </div>
       </div>
+      </div>
 
       <div class="people-group">
         <h3 class="people-group-title">Equipo Living Lab PUCV</h3>
@@ -120,8 +125,13 @@
           </div>
            <div class="person-card">
             <div class="person-photo" aria-hidden="true"></div>
-            <p class="person-name">Diego Peña</p>
+            <p class="person-name">Nicolás Rebolledo</p>
             <p class="person-role">Estudiante de ingeniería Civil, monitor colaborador</p>
+          </div>
+           <div class="person-card">
+            <div class="person-photo" aria-hidden="true"></div>
+            <p class="person-name">Valentina Lobos</p>
+            <p class="person-role">Estudiante de ingeniería Civil, monitora colaboradora</p>
           </div>
         </div>
       </div>
@@ -220,8 +230,8 @@
         </div>
 
         <div class="resource-row">
-          <div class="icon-square" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+          <div class="icon-square">
+            <img src="img/Archivo.svg" alt="" />
           </div>
           <div class="resource-content">
             <p class="resource-title">Artículo de conferencia Intersecciones 2026</p>
@@ -279,18 +289,40 @@
     </div>
     <div class="footer-col">
       <h4>Navegación</h4>
-      <a href="inmersion-sin-exclusion.html#top">Inicio</a>
-      <a href="sobre-el-proyecto.html">Sobre el proyecto</a>
+      <a href="index.html#top">Inicio</a>
+      <a href="proyecto.html">Sobre el proyecto</a>
       <a href="principios.html">Principios</a>
       <a href="protocolos.html">Protocolos</a>
     </div>
     <div class="footer-col">
       <h4>Contacto</h4>
       <a href="mailto:begona.zamudio.h@mail.pucv.cl">begona.zamudio.h@mail.pucv.cl</a>
-      <p>PUCV · Diseño de Interacción</p>
+      <p>PUCV, Diseño de Interacción</p>
     </div>
   </div>
 </footer>
 
+<script>
+  (function(){
+    var toggle = document.querySelector('.nav-toggle');
+    var links = document.getElementById('nav-links');
+    if(!toggle || !links) return;
+    function setOpen(open){
+      toggle.setAttribute('aria-expanded', open);
+      toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+      links.classList.toggle('is-open', open);
+    }
+    toggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+    document.addEventListener('click', function(e){
+      if(!links.contains(e.target)) setOpen(false);
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){ setOpen(false); toggle.focus(); }
+    });
+  })();
+</script>
 </body>
 </html>
