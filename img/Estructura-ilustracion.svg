@@ -240,6 +240,37 @@
       <rect class="cls-13" x="212.81" y="185.58" width="15.54" height="14.06"/>
     </clipPath>
   </defs>
+  <!-- Cuadrados amarillos detrás de la ilustración -->
+  <g id="cuadrados">
+    <rect x="75.0" y="315.0" width="10" height="10" rx="1.5" fill="#f9bc5b" transform="rotate(25 80 320)"/>
+    <rect x="104.0" y="14.0" width="12" height="12" rx="1.5" fill="#f9bc5b" transform="rotate(20 110 20)"/>
+    <rect x="250.5" y="5.5" width="9" height="9" rx="1.5" fill="none" stroke="#f9bc5b" stroke-width="2.5" stroke-linejoin="round" transform="rotate(-15 255 10)"/>
+    <rect x="395.0" y="10.0" width="10" height="10" rx="1.5" fill="#f9bc5b" transform="rotate(30 400 15)"/>
+    <rect x="737.0" y="25.0" width="10" height="10" rx="1.5" fill="#f9bc5b" transform="rotate(15 742 30)"/>
+    <rect x="654.5" y="134.5" width="11" height="11" rx="1.5" fill="none" stroke="#f9bc5b" stroke-width="2.5" stroke-linejoin="round" transform="rotate(-30 660 140)"/>
+    <rect x="737.5" y="190.5" width="9" height="9" rx="1.5" fill="#f9bc5b" transform="rotate(25 742 195)"/>
+    <rect x="730.5" y="347.5" width="9" height="9" rx="1.5" fill="none" stroke="#f9bc5b" stroke-width="2.5" stroke-linejoin="round" transform="rotate(-20 735 352)"/>
+    <rect x="375.0" y="200.0" width="10" height="10" rx="1.5" fill="none" stroke="#f9bc5b" stroke-width="2.5" stroke-linejoin="round" transform="rotate(40 380 205)"/>
+    <rect x="85.5" y="117.5" width="9" height="9" rx="1.5" fill="#f9bc5b" transform="rotate(-10 90 122)"/>
+    <rect x="16.5" y="234.5" width="11" height="11" rx="1.5" fill="none" stroke="#f9bc5b" stroke-width="2.5" stroke-linejoin="round" transform="rotate(30 22 240)"/>
+    <rect x="96.0" y="264.0" width="8" height="8" rx="1.5" fill="#f9bc5b" transform="rotate(15 100 268)"/>
+    <rect x="435.5" y="123.5" width="9" height="9" rx="1.5" fill="#f9bc5b" transform="rotate(-35 440 128)"/>
+    <rect x="11.0" y="131.0" width="8" height="8" rx="1.5" fill="none" stroke="#f9bc5b" stroke-width="2.5" stroke-linejoin="round" transform="rotate(20 15 135)"/>
+    <rect x="134.5" y="113.5" width="9" height="9" rx="1.5" fill="none" stroke="#f9bc5b" stroke-width="2.5" stroke-linejoin="round" transform="rotate(-15 139 118)"/>
+    <rect x="331.0" y="127.0" width="8" height="8" rx="1.5" fill="#f9bc5b" transform="rotate(30 335 131)"/>
+    <rect x="348.5" y="259.5" width="9" height="9" rx="1.5" fill="#f9bc5b" transform="rotate(35 353 264)"/>
+    <rect x="367.0" y="272.0" width="8" height="8" rx="1.5" fill="none" stroke="#f9bc5b" stroke-width="2.5" stroke-linejoin="round" transform="rotate(-10 371 276)"/>
+    <rect x="155.5" y="3.5" width="9" height="9" rx="1.5" fill="#f9bc5b" transform="rotate(20 160 8)"/>
+    <rect x="471.0" y="15.0" width="8" height="8" rx="1.5" fill="none" stroke="#f9bc5b" stroke-width="2.5" stroke-linejoin="round" transform="rotate(-25 475 19)"/>
+    <rect x="638.0" y="4.0" width="10" height="10" rx="1.5" fill="#f9bc5b" transform="rotate(15 643 9)"/>
+    <rect x="664.0" y="3.0" width="8" height="8" rx="1.5" fill="none" stroke="#f9bc5b" stroke-width="2.5" stroke-linejoin="round" transform="rotate(30 668 7)"/>
+    <rect x="750.0" y="134.0" width="10" height="10" rx="1.5" fill="#f9bc5b" transform="rotate(-20 755 139)"/>
+    <rect x="745.5" y="306.5" width="9" height="9" rx="1.5" fill="none" stroke="#f9bc5b" stroke-width="2.5" stroke-linejoin="round" transform="rotate(25 750 311)"/>
+    <rect x="600.0" y="322.0" width="8" height="8" rx="1.5" fill="#f9bc5b" transform="rotate(35 604 326)"/>
+    <rect x="455.5" y="334.5" width="9" height="9" rx="1.5" fill="none" stroke="#f9bc5b" stroke-width="2.5" stroke-linejoin="round" transform="rotate(-15 460 339)"/>
+    <rect x="208.0" y="325.0" width="10" height="10" rx="1.5" fill="#f9bc5b" transform="rotate(-30 213 330)"/>
+    <rect x="230.0" y="344.0" width="8" height="8" rx="1.5" fill="none" stroke="#f9bc5b" stroke-width="2.5" stroke-linejoin="round" transform="rotate(20 234 348)"/>
+  </g>
   <g id="Capa_3" data-name="Capa 3">
     <!-- Fondo quitado: el degradado lo pone el hero en style.css <rect class="cls-28" x="0" y="0" width="760" height="380"/> -->
   </g>

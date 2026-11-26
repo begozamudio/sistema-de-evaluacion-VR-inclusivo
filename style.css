@@ -572,20 +572,22 @@
 /* ---------- ¿Quiénes somos? ---------- */
 .about-block{
   display:flex;
-  gap:2.5rem;
+  gap:2rem;
   align-items:flex-start;
-  flex-wrap:wrap;
 }
+/* Ícono pequeño que marca el inicio del párrafo */
 .about-media{
-  flex:0 0 280px;
-  width:280px;
-  aspect-ratio:4/3;
-  border-radius:14px;
-  background:var(--secondary);
+  flex:0 0 60px;
+  width:60px;
+}
+.about-media img{
+  display:block;
+  width:100%;
+  height:auto;
 }
 .about-text{
   flex:1;
-  min-width:260px;
+  min-width:0;
   display:flex;
   flex-direction:column;
   gap:1.1rem;
@@ -625,6 +627,54 @@
   background:var(--secondary);
   scroll-snap-align:start;
 }
+img.gallery-item{
+  display:block;
+  width:320px;
+  object-fit:cover;
+}
+/* Galería con título al pasar el cursor: degradado morado desde abajo */
+.gallery-figure{
+  position:relative;
+  margin:0;
+  overflow:hidden;
+}
+.gallery-figure img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.gallery-figure figcaption{
+  position:absolute;
+  inset:auto 0 0 0;
+  padding:3.5rem 1rem 1rem;
+  background:linear-gradient(to top, rgba(45,18,72,0.95) 0%, rgba(45,18,72,0.75) 45%, rgba(45,18,72,0) 100%);
+  color:#fff;
+  font-family:'Inter', sans-serif;
+  font-weight:600;
+  font-size:0.9rem;
+  line-height:1.4;
+  opacity:0;
+  transform:translateY(0.5rem);
+  transition:opacity .3s ease, transform .3s ease;
+}
+.gallery-figure:hover figcaption,
+.gallery-figure:focus-visible figcaption{
+  opacity:1;
+  transform:none;
+}
+.gallery-figure:focus-visible{
+  outline:3px solid var(--accent);
+  outline-offset:3px;
+}
+/* En pantallas táctiles (sin hover) el título se muestra siempre */
+@media (hover:none){
+  .gallery-figure figcaption{ opacity:1; transform:none; }
+}
+@media (prefers-reduced-motion:reduce){
+  .gallery-figure figcaption{ transition:none; }
+}
 .gallery-scroll::-webkit-scrollbar{ height:8px; }
 .gallery-scroll::-webkit-scrollbar-thumb{ background:var(--border); border-radius:999px; }
 .gallery-scroll::-webkit-scrollbar-track{ background:transparent; }
@@ -663,6 +713,8 @@
   border-radius:50%;
   background:var(--secondary);
   margin:0 auto 1rem;
+  display:block;
+  object-fit:cover;
 }
 .person-name{
   font-family:'Inter', sans-serif;
@@ -1081,19 +1133,11 @@ a.tag:hover{ background:var(--primary); color:var(--on-primary); border-color:va
 .page-hero--metricas{
   background-image:url("img/Metricas-ilustracion.svg"), var(--hero-degradado);
 }
-/* Estructura e Instrumentos: sus ilustraciones no traen los cuadrados amarillos de Métricas,
-   así que se agregan como una capa intermedia, con la misma posición y tamaño que la ilustración */
-.page-hero--estructura,
-.page-hero--instrumentos{
-  background-position:right max(1.5rem, calc((100% - 1120px) / 2 + 1.5rem)) bottom,
-                      right max(1.5rem, calc((100% - 1120px) / 2 + 1.5rem)) bottom, 0 0;
-  background-size:min(760px, 58%) auto, min(760px, 58%) auto, 100% 100%;
-}
 .page-hero--estructura{
-  background-image:url("img/Estructura-ilustracion.svg"), url("img/hero-cuadrados-estructura.svg"), var(--hero-degradado);
+  background-image:url("img/Estructura-ilustracion.svg"), var(--hero-degradado);
 }
 .page-hero--instrumentos{
-  background-image:url("img/Instrumentos-ilustracion.svg"), url("img/hero-cuadrados-instrumentos.svg"), var(--hero-degradado);
+  background-image:url("img/Instrumentos-ilustracion.svg"), var(--hero-degradado);
 }
 /* Sobre el lila, la dispersión de cuadrados va en amarillo */
 .page-hero--roles.page-hero--cuadrados::before,
@@ -1622,8 +1666,6 @@ a.tag:hover{ background:var(--primary); color:var(--on-primary); border-color:va
   
 }   
 @media (max-width:760px){
-  .about-block{ flex-direction:column; }
-  .about-media{ width:100%; }
   .two-col-text{ grid-template-columns:1fr; gap:1.5rem; }
   .contact-grid{ grid-template-columns:1fr; gap:2rem; }
 }
